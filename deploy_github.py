@@ -15,6 +15,7 @@ import os
 import pathlib
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 
 APP = pathlib.Path(__file__).resolve().parent
@@ -96,8 +97,13 @@ def main():
     ok = fail = 0
     for rel, path in files:
         content = base64.b64encode(path.read_bytes()).decode()
-        st, body = api("PUT", f"/repos/{a.owner}/{a.repo}/contents/{rel}", token, {
-            "message": "add " + rel, "content": content})
+        safe = urllib.parse.quote(rel)
+        payload = {"message": "add " + rel, "content": content}
+        # 文件已存在时更新必须带 sha
+        st0, cur = api("GET", f"/repos/{a.owner}/{a.repo}/contents/{safe}", token)
+        if st0 == 200 and isinstance(cur, dict) and cur.get("sha"):
+            payload["sha"] = cur["sha"]
+        st, body = api("PUT", f"/repos/{a.owner}/{a.repo}/contents/{safe}", token, payload)
         if st in (200, 201):
             ok += 1
         else:
