@@ -1,0 +1,90 @@
+/* 选择题卡片（参考 harness 样式，浅色版） */
+.choicecard {
+  align-self: flex-start;
+  width: min(92%, 560px);
+  border: 1px solid #DDE5E0;
+  border-radius: 14px;
+  background: #fff;
+  padding: 14px 16px 12px;
+  animation: chipsUp .22s ease-out;
+  box-shadow: 0 2px 10px rgba(35, 60, 48, .05);
+}
+.choicecard .ck {
+  font-size: 10.5px;
+  letter-spacing: .08em;
+  color: #98A29C;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.choicecard .cq {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1F2A24;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.choicecard .opt {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 9px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.choicecard .opt:hover { background: #F6F9F7; }
+.choicecard .opt.on {
+  background: #F0F7F3;
+  border-color: #B9D4C6;
+}
+.choicecard .num {
+  flex: 0 0 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: #EFF3F0;
+  color: #5C665F;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.choicecard .opt.on .num { background: #2F6B54; color: #fff; }
+.choicecard .ot { font-size: 13px; color: #253029; font-weight: 600; }
+.choicecard .od { font-size: 12px; color: #7A847E; margin-top: 2px; line-height: 1.5; }
+.choicecard .custom {
+  margin-top: 8px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: #F7F9F8;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12.5px;
+  color: #6F7A74;
+}
+.choicecard .custom input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  outline: none;
+  font-family: inherit;
+}
+.choicecard .feet {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+.choicecard .feet button {
+  border: 1px solid #D7E0DB;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #3E4A43;
+}
+.choicecard .feet button.p { background: #2F6B54; border-color: #2F6B54; color: #fff; }
+.choicecard .feet button:disabled { opacity: .5; cursor: default; }
