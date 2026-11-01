@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>准绳 · 绩效评审智能体</title>
+<link rel="stylesheet" href="/style.css?v=41">
+<link rel="stylesheet" href="/chat.css?v=2">
+<link rel="stylesheet" href="/choice.css?v=1">
+</head>
+<body>
+<div class="topbar">
+  <div class="logo"><div class="mark">准</div><div class="brand">准绳</div></div>
+  <nav class="tabs" id="nav"></nav>
+  <div class="who">
+    <span id="health" class="pill">连接中…</span>
+    <select id="persona" title="切换身份（演示用）"></select>
+  </div>
+</div>
+<main id="app" class="wrap"></main>
+
+<div id="shell" class="shell hidden">
+  <aside class="chatcol">
+    <div class="chead"><b>和准绳说话</b><span id="chatWho" class="muted" style="font-size:12px"></span></div>
+    <div id="chatlog" class="chatlog"></div>
+    <div class="composer">
+      <div id="panelChips" class="chips"></div>
+      <div class="row">
+        <textarea id="chatInput" placeholder="问点什么，或者说「帮我提交目标」…（Enter 发送，Shift+Enter 换行）"></textarea>
+        <button id="sendBtn" class="p">发送</button>
+      </div>
+    </div>
+  </aside>
+  <section class="panel" id="panel"></section>
+</div>
+<div id="toast" class="toast"></div>
+<script src="/app.js?v=71"></script>
+<script src="/chat.js?v=20"></script>
+</body>
+</html>
