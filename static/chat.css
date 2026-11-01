@@ -1,0 +1,131 @@
+/* 准绳 · 对话模式（左聊天 40% / 右界面 60%） */
+.shell {
+  display: grid;
+  grid-template-columns: minmax(360px, 40%) 1fr;
+  gap: 16px;
+  max-width: 1500px;
+  margin: 16px auto 0;
+  padding: 0 20px 20px;
+  align-items: start;
+}
+.shell.hidden { display: none; }
+.chatcol {
+  background: #fff;
+  border: 1px solid #E2E8E4;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 150px);
+  min-height: 520px;
+  overflow: hidden;
+}
+.chatcol .chead {
+  padding: 12px 16px;
+  border-bottom: 1px solid #EEF2EF;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chatcol .chead b { font-size: 14px; }
+.chatlog {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bubble {
+  max-width: 92%;
+  padding: 10px 13px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.bubble.user {
+  align-self: flex-end;
+  background: #2F6B54;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+.bubble.ai {
+  align-self: flex-start;
+  background: #F5F8F6;
+  color: #253029;
+  border-bottom-left-radius: 4px;
+}
+.bubble.sys {
+  align-self: center;
+  background: transparent;
+  color: #8A938E;
+  font-size: 12px;
+  padding: 2px 0;
+}
+.bubble.ai .spin { margin-right: 6px; }
+.actioncard {
+  align-self: flex-start;
+  max-width: 92%;
+  border: 1px solid #C9DED4;
+  background: #FAFCFB;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+}
+.actioncard .t { font-weight: 600; margin-bottom: 4px; }
+.actioncard .d { color: #5C665F; font-size: 12.5px; margin-bottom: 10px; }
+.actioncard .acts { display: flex; gap: 8px; }
+.composer {
+  border-top: 1px solid #EEF2EF;
+  padding: 10px 12px 12px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.chips button {
+  border: 1px solid #D7E0DB;
+  background: #fff;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #3E4A43;
+}
+.chips button:hover { border-color: #2F6B54; color: #2F6B54; }
+.composer .row { display: flex; gap: 8px; align-items: flex-end; }
+.composer textarea {
+  flex: 1;
+  min-height: 46px;
+  max-height: 120px;
+  resize: vertical;
+  border: 1px solid #D7E0DB;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-family: inherit;
+}
+.panel { min-height: 400px; }
+.panel .empty { padding: 40px; text-align: center; }
+@media (max-width: 1080px) {
+  .shell { grid-template-columns: 1fr; }
+  .chatcol { height: 60vh; }
+}
+
+.bubblerow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.chips-for-bubble {
+  margin: 0;
+  animation: chipsUp .22s ease-out;
+}
+@keyframes chipsUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
