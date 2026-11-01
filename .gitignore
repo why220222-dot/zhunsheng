@@ -1,0 +1,16 @@
+# 密钥与本地数据，绝不进仓库
+.env
+*.env
+data/
+tools/
+*.log
+_*.py
+!
+
+# Python
+__pycache__/
+*.pyc
+
+# 截图与临时文件
+shots/
+_shot.png
