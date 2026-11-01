@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: zhuinsheng
+    runtime: python
+    plan: free
+    buildCommand: "echo no-build"
+    startCommand: "python server.py"
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: 0.0.0.0
+      - key: SEED_DEMO
+        value: "1"
+      - key: DEMO_PEOPLE
+        value: "2"
+      - key: GENESIS_BASE_URL
+        value: https://token.moi.matrixorigin.cn/v1
+      - key: GENESIS_MODEL
+        value: deepseek-v4.1-flash
+      - key: GENESIS_API_KEY
+        sync: false          # 在 Render 控制台里手动填，绝不进仓库
